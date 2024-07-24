@@ -1,6 +1,0 @@
-body:not(.modal-open) {
-              padding-right: 0px !important;
-            } 
-            a:hover{
-              text-decoration: none !important;
-            }
