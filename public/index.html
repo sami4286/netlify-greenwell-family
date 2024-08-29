@@ -118,53 +118,6 @@
     }
   </style>
 </div>
-<!-------------- Pop Up -->
-<div class="modal fade builder-editable-elements elementId-15-20" id="commonpopup2" role="dialog">
-  <div class="modal-dialog builder-editable-elements elementId-15-21">
-    <div class="modal-content builder-editable-elements elementId-15-22">
-      <div class="modal-header builder-editable-elements elementId-15-23">
-        <button class="close builder-editable-elements elementId-15-24" data-dismiss="modal" type="button">×</button>
-        <h4 class="modal-title builder-editable-elements elementId-15-25"></h4>
-      </div>
-      <div class="modal-body builder-editable-elements elementId-15-26">
-        <div class="row builder-editable-elements elementId-15-27">
-          <div class="col-md-6 col-md-offset-3 img__popup builder-editable-elements elementId-15-28">
-            <img src="#" alt="logo" title="logo" width="170px" data-src="https://gp-assets-1.growthplug.com/website_files/4327/gwstranspnew.png" class="builder-editable-elements elementId-15-29">
-            <img src="#" alt="special offer" title="special offer" width="100%" data-src="https://gp-assets-1.growthplug.com/website_files/4327/pexels-daria-rem-1977047_1_odIpjoa.jpg" class="builder-editable-elements elementId-15-30">
-             
-          </div>
-</div>
-        <br class="builder-editable-elements elementId-15-31">
-        <div class="row builder-editable-elements elementId-15-32">
-          <div class="col-md-6 content__popup builder-editable-elements elementId-15-33">
-            <br class="builder-editable-elements elementId-15-34">
-           
-            <h2 class="builder-editable-elements elementId-15-35">$89 SAME DAY EMERGENCY DENTISTRY APPOINTMENT! </h2>
-<p class="builder-editable-elements elementId-15-36">
-Same day appointment available. Includes exam and x-ray. No insurance? No problem! We have financing to help.</p>
-            <a class="apt__btn builder-editable-elements elementId-15-37" data-target="#appointment" data-toggle="modal">Request an Appointment</a>
-</div>
-             <div class="col-md-6 content__popup builder-editable-elements elementId-15-38">
-
-<br class="builder-editable-elements elementId-15-39">
-<h2 class="builder-editable-elements elementId-15-40">COMPLIMENTARY SECOND OPINION! </h2>
-<p class="builder-editable-elements elementId-15-41">
-Are you looking to get a second opinion? Contact us today and we’ll provide a complimentary second opinion. 
-</p>
-            
-            <a class="apt__btn bh builder-editable-elements elementId-15-42" href="tel:2252610043">Call Us</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer builder-editable-elements elementId-15-43">
-        <button class="btn btn-default builder-editable-elements elementId-15-44" data-dismiss="modal" type="button">
-          No thanks
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <style class="builder-editable-elements elementId-15-45">
   .apt__btn {
@@ -820,24 +773,6 @@ div#landing-captcha {
         </div>
       </section>
   </section></div>
-  <div id="success-popup" class="modal success-popup popup builder-editable-elements elementId-17-60" role="dialog">
-    <div class="modal-dialog modal-md builder-editable-elements elementId-17-61">
-      <div class="modal-content success-message builder-editable-elements elementId-17-62">
-        <div class="modal-body builder-editable-elements elementId-17-63">
-          <div class="success-message__text builder-editable-elements elementId-17-64">
-            <p class="builder-editable-elements elementId-17-65">
-              <i class="fa fa-check builder-editable-elements elementId-17-66" aria-hidden="true"></i>
-            </p>
-            <h5 class="builder-editable-elements elementId-17-67">Form Submitted Successfully</h5>
-            <p class="dynamic-text builder-editable-elements elementId-17-68"></p>
-            <a href="#" data-toggle="modal" data-dismiss="modal" class="success-button builder-editable-elements elementId-17-69">
-              Done
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <style class="builder-editable-elements elementId-17-70">
     .success-popup {
       margin-top: 50px;
@@ -964,56 +899,6 @@ section.service-box .col-md-4 img {
     }
   </style>
 
-<script type="text/javascript" class="builder-editable-elements elementId-17-71">
-  function onSubmitForm(formId) {
-    const formElement = document.getElementById(formId);
-    const formData = new FormData(formElement);
-    $.ajax({
-      url: 'https://console-api.growthplug.com/api/site-builder/form/submit/?form_id=11&form_name=contact-form',
-      headers: { 'GP-Host': window.location.hostname },
-      type: 'POST',
-      data: formData,
-      cache: false,
-      contentType: false,
-      processData: false,
-      enctype: "multipart/form-data",
-      success: function (result) {
-        close_all_other_modals();
-        if (result.data != "" && result.data != null) {
-          window.location.replace(result.data);
-        } else {
-          if ($("#success-popup").length > 0) {
-            $("#success-popup").modal("show");
-            $('#success-popup').on('hidden.bs.modal', function () {
-              window.location.reload();
-            });
-          }
-          $(`#${formId}`)[0].reset();
-          resetLandingCaptcha();
-        }
-      },
-      error: function (error) {
-        console.log("error", error);
-      }
-    });
-  }
-
-  if (document.getElementById("landing-page-form")) {
-    document.getElementById("landing-page-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      onSubmitForm("landing-page-form");
-    });
-  }
-  function close_all_other_modals() {
-    var elements = document.getElementsByClassName('modal');
-    var i;
-    for (i = 0; i < elements.length; i++) {
-      if (elements[i].id != 'success-popup') {
-        $("#" + elements[i].id).modal('hide');
-      }
-    }
-  }
-</script>
 
 <!-- <section class="download_img">
 <a href="https://gp-assets-1.growthplug.com/website_files/4327/gws_new_patient_50_off.png" download target="_blank">
